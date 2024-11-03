@@ -1,0 +1,182 @@
+print "This language is very cool"
+
+# Comment can be written by a '#' or '; on start of the line'
+
+### This
+is
+a
+multiline
+comment
+###
+
+variable myVariable = "I am a string";
+variable MyVariable:string = "I am a constant string";
+
+constable variable myVar = "I am also a constant";
+
+
+; This language is cool so + or any arthematic is written as there name for redablity
+
+print add 9,4
+
+# Complex operation
+print open add 9,4; subtract 9,4 close
+# or
+
+print <add 9,4;subtract 9,4>
+
+# condition
+if switch then
+    print 1
+endif
+
+
+# with else
+if switch then
+    print 1
+elif switch then
+    print 2
+else
+    print 3
+endif
+
+# loops
+while switch then
+    print "loop!" open NewLine close
+    # or
+    print "loop!" <NewLine>
+endStatement
+
+# run with while
+run program
+    print "I will run once even if the statement is false";
+while switch
+endStatement
+
+
+# range loop
+variable i = 0;
+range from 0 to 10 then
+    print number i; # optional but recommended to use number keyword
+    i = i + 1; # note i += operators are not present
+endStatement
+
+
+# dot loop
+variable dots:string = ".......";
+dot dots then
+    print "I will print for every '.'";
+endStatement
+
+
+func myFunction then
+    parameters = num1,num2
+    print number add num1,num2
+    return 1
+endStatement
+
+terminate; # For system call for exit
+execute "ls"; # for system calls
+
+cache myCache
+#or
+variable myCachE:cache = "";
+
+define memory 128 for myCache; # defining memory of 128 megabytes
+undefine memory 128 for myCache; # delete the defined memory for cache
+# Note only memory can be defined for a cache and cache can only hold data if defined in memory
+
+myCache insert "Your data";
+
+# get the memory location
+print lowlevel open return location of memory from myCache close
+
+# or
+
+print lowlevel <return location of memory from myCache>
+
+# insert data in memory
+insert "data" in "memory location";
+# or
+insert "data" in myCache;
+
+# get data from memory
+print get content from myCache
+
+# fetch data from memory : works same as get but also erases the data from memory but don't undefines it
+print fetch content from myCache
+
+variable myVar:file = state open "myFile.txt"
+myVar append "Hehehe"
+myVar content; # return the full content of file
+myVar line; # return 1st line of file
+myVar line from number 2; # return line from specified number
+myVar write "hehehehe"
+myVar close
+
+
+# operators
+not; # will say no
+yes; # will say yes
+true; # will say true
+false; # will say false
+equals; # will say equal or replace with =
+cool; # Unique operator which can be operated by the programmer example
+
+cool run program
+    if cool equals cool then
+        return 123;
+    else
+        print "error was found for some reason";
+    endif
+endStatement
+
+# or simply
+cool run program
+    return 123;
+endStatement
+
+# cool can be programmed in any way programer wants
+
+
+
+
+# Error handling finally!
+# Programmers can block the errors and print when ever they wants
+block warning for program
+    print number "8"; # "8" is a string so it in cool language if a string fully contains valid numbers then they will be converted to cool:int
+throw
+    variable warning_message:string = "hehehehehehe"
+    print warning_message;
+
+# Error
+block error for program
+    error print number "8"; # error keyword will consider a line error but cool will say : unknown occured in line [number] program after error
+
+    # Since getting errors in cool lang is not an easy task so for blocking errors we created custom error which is unknown to cool
+throw
+    print "Hehehehehehe , Our fake error was blocked"
+
+
+
+# Why warnings most of the time not errors ? Cool language was designed to be a language which can help begginers to code easily so cool core contains warnings mostly errors only  occurs for serious issues
+
+
+
+# cool commands only affects the intepreter or compiler
+
+build for cool is compiler; # build will define how the cool program must be executed but it will only throw warnings not errors
+
+build for cool is intepreter; # Saying the this program must be excecuted by intepreter
+
+build for cool is any; # Saying that this program can be runed by intepreter or compiler and this will be by default since compiler and intepreter can output code in any way dev wants
+
+
+import everything from myprogram.cool; # Using cool as a library or API for other Programmers and can be imported by import keyword
+
+import myFunc from myprogram.cool; # Only importing myFunc from myprogram.cool
+
+import open Open;myFunc;FileCreate; close from a.cool
+# importing a set of things or by
+import <Open;myFunc;FileCreate;> from a.cool
+# Same thing here
